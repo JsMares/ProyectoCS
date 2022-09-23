@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRERIA TORMENTA LITERARIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">TORMENTA LITERARIA</a>
+    </nav>
+    
+    <div class="container">
+        <div class="col-md-5">
+           <div class="card">
+               <div class="card-body">
+                   <form action="/add" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="titulo" placeholder="Titulo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="autor" placeholder="Autor" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="publicacion" placeholder="Año de Publicacion" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="paginas" placeholder="Total de páginas" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nacionalidad" placeholder="País de Origen" class="form-control">
+                    </div>
+                    <button class="btn btn-primary">Registrar</button>
+                </form>
+               </div>
+           </div>
+        </div>
+        <div class="col-md-5">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Fecha de Publicacion</th>
+                        <th>Total de Páginas</th>
+                        <th>País de Origen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < datos.length; i++){  %>
+                        <tr>
+                            <td><%= i+1  %></td>
+                            <td><%= datos[i].titulo  %></td>
+                            <td><%= datos[i].autor  %></td>
+                            <td><%= datos[i].publicacion  %></td>
+                            <td><%= datos[i].paginas  %></td>
+                            <td><%= datos[i].nacionalidad  %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
