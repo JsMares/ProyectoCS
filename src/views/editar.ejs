@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIBRERIA TORMENTA LITERARIA</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
@@ -15,25 +16,26 @@
         <div class="col-md-5">
            <div class="card">
                <div class="card-body">
-                   <form action="/add" method="post">
+                   <form action="/update/<%= informacion._id %>" method="POST">
                     <div class="form-group">
-                        <input type="text" name="titulo" placeholder="Titulo" class="form-control">
+                        <input type="text" name="titulo" placeholder="Titulo" class="form-control" value="<%= informacion.titulo %>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="autor" placeholder="Autor" class="form-control">
+                        <input type="text" name="autor" placeholder="Autor" class="form-control" value="<%= informacion.autor %>">
                     </div>
                     <div class="form-group">
-                        <input type="date" name="publicacion" placeholder="Año de Publicacion" class="form-control">
+                        <input type="date" name="publicacion" placeholder="Año de Publicacion" class="form-control" value="<%= informacion.publicacion %>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="paginas" placeholder="Total de páginas" class="form-control">
+                        <input type="text" name="paginas" placeholder="Total de páginas" class="form-control" value="<%= informacion.paginas %>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nacionalidad" placeholder="País de Origen" class="form-control">
+                        <input type="text" name="nacionalidad" placeholder="País de Origen" class="form-control" value="<%= informacion.nacionalidad%>">
                     </div>
-                    <button class="btn btn-primary">Registrar</button>
+                    <button class="btn btn-primary">GUARDAR CAMBIOS</button>
                 </form>
                </div>
+               <div class="col-md-5">
            </div>
         </div>
         <div class="col-md-5">
