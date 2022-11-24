@@ -9,7 +9,7 @@ const User = require('../model/users');
 router.get('/', async (req, res) =>{
     const datos = await Valor.find();
     console.log(datos);
-    res.render('login.ejs',{
+    res.render('index.ejs',{
         datos
     });
 });
