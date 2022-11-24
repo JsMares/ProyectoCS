@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const indexRoutes = require('./routes/index.js');
 
